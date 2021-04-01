@@ -1,0 +1,45 @@
+add_newline = false
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[✖](bold red)'
+
+[aws]
+disabled = true
+
+[directory]
+style = 'blue bold'
+truncate_to_repo = false
+
+[git_branch]
+style = 'yellow bold'
+format = '[$branch]($style) '
+
+[git_commit]
+style = 'yellow'
+format = '- [$hash]($style) '
+
+[shell]
+disabled = false
+
+[git_status]
+style = 'bold'
+format = '\(([$all_status$ahead_behind]($style))\) '
+stashed = ''
+ahead = '[⇡${count}](bold green)'
+behind = '[⇣${count}](bold red)'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+
+[line_break]
+disabled = true
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[package]
+disabled = true
+
+# [env_var]
+# style = 'yellow bold'
+# variable = 'STARSHIP_SHELL'
+# format = '[\($env_value\)]($style) '
