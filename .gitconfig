@@ -106,3 +106,5 @@
 	whitespace = red reverse
 [init]
 	defaultBranch = master
+[pull]
+	ff = only
