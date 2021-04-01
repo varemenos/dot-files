@@ -38,8 +38,3 @@ format = '[$symbol($version )]($style)'
 
 [package]
 disabled = true
-
-# [env_var]
-# style = 'yellow bold'
-# variable = 'STARSHIP_SHELL'
-# format = '[\($env_value\)]($style) '
