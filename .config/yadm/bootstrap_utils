@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+function __log_debug () {
+  tput setaf 3
+  echo "\n$1\n"
+  tput sgr0
+}
+
+function __log_info () {
+  tput bold
+  tput setaf 2
+  echo "\n\n$1\n\n"
+  tput sgr0
+}
+
+function __load_module () {
+  __log_info "loading module: $1"
+  . "./bootstrap_modules/$1.sh"
+}
+
+if [ "${1}" == "--unload" ]; then
+  __log_debug 'unloading bootstrap utils'
+
+  # clean up after ourselves
+  unset -f __log_debug __load_module __unload_bootstrap_utils
+
+  exit 0
+fi

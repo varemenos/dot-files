@@ -1,7 +1,9 @@
 #!/bin/sh
 
+__log_debug "Checking Xcode command line tools"
+
 if ! xcode-select --print-path &> /dev/null; then
-  _fancy_echo "installing xcode-tools"
+  __log_debug "installing xcode-tools"
 
   # Prompt user to install the XCode Command Line Tools
   xcode-select --install &> /dev/null
@@ -13,7 +15,7 @@ if ! xcode-select --print-path &> /dev/null; then
       sleep 5
   done
 
-  _fancy_echo "Install XCode Command Line Tools"
+  __log_debug "Install XCode Command Line Tools"
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -22,7 +24,7 @@ if ! xcode-select --print-path &> /dev/null; then
   # https://github.com/alrra/dotfiles/issues/13
 
   sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
-  _fancy_echo "Make xcode-select developer directory point to Xcode"
+  __log_debug "Make xcode-select developer directory point to Xcode"
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -30,5 +32,7 @@ if ! xcode-select --print-path &> /dev/null; then
   # https://github.com/alrra/dotfiles/issues/10
 
   sudo xcodebuild -license accept
-  _fancy_echo "Agree with the XCode Command Line Tools licence"
+  __log_debug "Agree with the XCode Command Line Tools licence"
+else
+  __log_debug "XCode Command Line Tools already installed"
 fi

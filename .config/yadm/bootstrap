@@ -1,40 +1,25 @@
 #!/bin/sh
 
-function _fancy_echo () {
-  tput bold
-  tput setaf 3
-  echo "\nDBG: $1\n\n"
-  tput sgr0
-}
+source ./bootstrap_utils
 
 chmod 700 ~/.cache ~/.config
 
-_fancy_echo "decrypting secrets..."
+__log_debug "decrypting secrets..."
 
 yadm decrypt
 
+__load_module nvm
+
 system_type=$(uname -s)
-_fancy_echo "targetting platform ${system_type}"
+__log_debug "targetting platform ${system_type}"
 
 if [ $system_type = "Darwin" ]; then
-  _fancy_echo "Checking Xcode command line tools"
-  . bootstrap_scripts/xcode-clitools
-
-  if test ! $(which brew); then
-    _fancy_echo "installing Homebrew"
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-
-  if [ -f "$HOME/.Brewfile" ]; then
-    _fancy_echo "updating Homebrew bundle"
-
-    brew bundle --global
-  fi
+  pwd
+  __load_module xcode
+  __load_module brew
 
   # TODO:
   # check if dependencies are not installed and try to automaticall install them
 fi
 
-# clean up after ourselves
-unset -f _fancy_echo
+source ./bootstrap_utils --unload
