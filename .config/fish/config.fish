@@ -1,6 +1,8 @@
 set -U fish_greeting
 
+source ~/.config/fish/env.fish
 source ~/.config/fish/my_functions.fish
+
 set fish_user_paths $fish_user_paths ~/.rbenv/shims
 
 # SSH-AGENT
