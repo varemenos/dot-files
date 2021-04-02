@@ -53,6 +53,8 @@ function restore -d "Restore a backed up file for directory"
 	cp -r $argv[1].bak $argv[1]
 end
 
+function y -w yadm; yadm $argv; end
+
 function chpwd --on-variable PWD --description 'handler of changing $PWD'
   if not status --is-command-substitution ; and status --is-interactive
     set cur_cwd (echo $PWD | sed -e "s|^$HOME|~|" -e 's|^/private||')
