@@ -1,5 +1,6 @@
 #!/bin/sh
 
+__system_type=$(uname -s)
 
 function __log_debug () {
   tput setaf 3
@@ -23,7 +24,7 @@ if [ "${1}" == "--unload" ]; then
   __log_debug 'unloading bootstrap utils'
 
   # clean up after ourselves
-  unset -f __log_debug __load_module __unload_bootstrap_utils
+  unset -f __log_debug __load_module __system_type
 
   exit 0
 fi

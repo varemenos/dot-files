@@ -1,20 +1,16 @@
 #!/bin/sh
 
-source ./bootstrap_utils
-
 chmod 700 ~/.cache ~/.config
 
-__log_debug "decrypting secrets..."
+source ./bootstrap_utils
 
-yadm decrypt
-
+__load_module decrypt_secrets
 __load_module nvm
 
-system_type=$(uname -s)
-__log_debug "targetting platform ${system_type}"
+# Platform specific
+__log_debug "targetting platform ${__system_type}"
 
-if [ $system_type = "Darwin" ]; then
-  pwd
+if [ $__system_type = "Darwin" ]; then
   __load_module xcode
   __load_module brew
 
