@@ -1,23 +1,40 @@
 #!/bin/sh
 
+function _fancy_echo () {
+  tput bold
+  tput setaf 3
+  echo "\nDBG: $1\n\n"
+  tput sgr0
+}
+
 chmod 700 ~/.cache ~/.config
+
+_fancy_echo "decrypting secrets..."
 
 yadm decrypt
 
 system_type=$(uname -s)
+_fancy_echo "targetting platform ${system_type}"
 
-if [ "$system_type" = "Darwin" ]; then
-  # install homebrew if it's missing
-  if ! command -v brew >/dev/null 2>&1; then
-    echo "Installing homebrew"
+if [ $system_type = "Darwin" ]; then
+  _fancy_echo "Checking Xcode command line tools"
+  . bootstrap_scripts/xcode-clitools
+
+  if test ! $(which brew); then
+    _fancy_echo "installing Homebrew"
+
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   if [ -f "$HOME/.Brewfile" ]; then
-    echo "Updating homebrew bundle"
+    _fancy_echo "updating Homebrew bundle"
+
     brew bundle --global
   fi
 
   # TODO:
   # check if dependencies are not installed and try to automaticall install them
 fi
+
+# clean up after ourselves
+unset -f _fancy_echo
