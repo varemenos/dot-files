@@ -2,7 +2,7 @@
 
 chmod 700 ~/.cache ~/.config
 
-source ./bootstrap_utils
+. $(dirname $0)/bootstrap_utils --load
 
 __load_module decrypt_secrets
 __load_module nvm
@@ -13,4 +13,4 @@ __load_module macos
   # TODO:
   # check if dependencies are not installed and try to automaticall install them
 
-source ./bootstrap_utils --unload
+. $(dirname $0)/bootstrap_utils --unload

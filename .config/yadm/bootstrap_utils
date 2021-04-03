@@ -1,30 +1,44 @@
 #!/bin/sh
 
-__system_type=$(uname -s)
+if [ "${1}" == "--load" ]; then
+  __system_type=$(uname -s)
 
-function __log_debug () {
-  tput setaf 3
-  echo "\n$1\n"
-  tput sgr0
-}
+  function __log_debug () {
+    tput setaf 3 # 3 is yellow
+    echo "$1"
+    tput sgr0
+  }
 
-function __log_info () {
-  tput bold
-  tput setaf 2
-  echo "\n\n$1\n\n"
-  tput sgr0
-}
+  function __log_info () {
+    tput bold
+    tput setaf 2 # 2 is green
+    echo "$1"
+    tput sgr0
+  }
 
-function __load_module () {
-  __log_info "loading module: $1"
-  . "./bootstrap_modules/$1.sh"
-}
+  function __load_module () {
+    __log_info "loading module: $1"
+    . "$(dirname $0)/bootstrap_modules/$1.sh" 2>&1 | awk '{print "         "$0}'
+  }
 
-if [ "${1}" == "--unload" ]; then
-  __log_debug 'unloading bootstrap utils'
+  # loading them automatically is possible and easy to implement as demonstrated below but
+  # it's better to explicitly call them; this way you can disable files, or have more
+  # control over their order without prepending the filenames with numbers.
+  function __load_modules () {
+    for f in "$(dirname $0)/bootstrap_modules/*"; do
+      module_name = $(basename "$f" .sh)
+      # __load_module module_name
+      echo module_name
+    done
+  }
 
-  # clean up after ourselves
-  unset -f __log_debug __load_module __system_type
+  __log_info 'loaded bootstrap utils'
+elif [ "${1}" == "--unload" ]; then
+  __log_info 'unloaded bootstrap utils'
 
-  exit 0
+  # time to clean up after ourselves
+  # it's not needed but extra hygine never hurt anyone (famous last words)
+  # but regardless, this can possibly be used in the future as a hook of some sort
+  # a "lifecycle event"
+  unset -f __log_debug __log_info __load_module __load_modules __system_type
 fi
