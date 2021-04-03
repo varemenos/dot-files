@@ -6,16 +6,11 @@ source ./bootstrap_utils
 
 __load_module decrypt_secrets
 __load_module nvm
-
-# Platform specific
-__log_debug "targetting platform ${__system_type}"
-
-if [ $__system_type = "Darwin" ]; then
-  __load_module xcode
-  __load_module brew
+__load_module xcode
+__load_module brew
+__load_module macos
 
   # TODO:
   # check if dependencies are not installed and try to automaticall install them
-fi
 
 source ./bootstrap_utils --unload
