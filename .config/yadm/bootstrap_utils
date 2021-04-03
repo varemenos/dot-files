@@ -26,9 +26,8 @@ if [ "${1}" == "--load" ]; then
   # control over their order without prepending the filenames with numbers.
   function __load_modules () {
     for f in "$(dirname $0)/bootstrap_modules/*"; do
-      module_name = $(basename "$f" .sh)
-      # __load_module module_name
-      echo module_name
+      module_name=$(basename -s .sh $f)
+      __load_module module_name
     done
   }
 
