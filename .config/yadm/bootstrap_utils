@@ -43,8 +43,8 @@ elif [ "${1}" == "--unload" ]; then
 
   # time to clean up after ourselves
   # it's not needed but extra hygine never hurt anyone (famous last words)
-  # but regardless, this can possibly be used in the future as a hook of some sort
-  # a "lifecycle event"
+  # but regardless, this can possibly be used in the future as a hook of some
+  # sort of a "lifecycle event"
   unset -f __log_debug __log_info __load_module __load_modules
   unset -f __SYSTEM_TYPE __modules_path
 else
