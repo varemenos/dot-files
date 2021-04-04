@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-if [ "${1}" == "--load" ]; then
+if [ "$MODE" == "load" ]; then
+  export __system_type
   __system_type=$(uname -s)
 
   function __log_debug () {
@@ -16,28 +17,38 @@ if [ "${1}" == "--load" ]; then
     tput sgr0
   }
 
+  __modules_path=$(dirname "${BASH_SOURCE[0]}")/bootstrap_modules/
+
   function __load_module () {
     __log_info "loading module: $1"
-    . "$(dirname $BASH_SOURCE)/bootstrap_modules/$1.sh" 2>&1 | awk '{print "\t"$0}'
+    . "$__modules_path"/"$1".sh 2>&1 | awk '{print "\t"$0}'
   }
 
   # loading them automatically is possible and easy to implement as demonstrated below but
   # it's better to explicitly call them; this way you can disable files, or have more
   # control over their order without prepending the filenames with numbers.
   function __load_modules () {
-    for f in "$(dirname $BASH_SOURCE)/bootstrap_modules/*"; do
-      module_name=$(basename -s .sh $f)
-      __load_module $module_name
+    for f in "$__modules_path"/*; do
+      module_name=$(basename -s .sh "$f")
+      __load_module "$module_name"
     done
   }
 
   __log_info 'loaded bootstrap utils'
-elif [ "${1}" == "--unload" ]; then
-  __log_info 'unloaded bootstrap utils'
+elif [ "$MODE" == "unload" ]; then
+    tput bold
+    tput setaf 2 # for green
+    echo "unloaded bootstrap utils"
+    tput sgr0
 
   # time to clean up after ourselves
   # it's not needed but extra hygine never hurt anyone (famous last words)
   # but regardless, this can possibly be used in the future as a hook of some sort
   # a "lifecycle event"
   unset -f __log_debug __log_info __load_module __load_modules __system_type
+else
+  tput bold
+  tput setaf 9 # for red
+  echo "MODE needs to be set to one of the following: load|unload"
+  tput sgr0
 fi
