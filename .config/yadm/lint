@@ -1,0 +1,3 @@
+#!/bin/bash
+
+shellcheck bootstrap bootstrap_utils bootstrap_modules/*.sh
