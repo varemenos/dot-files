@@ -4,21 +4,21 @@ if [ "${1}" == "--load" ]; then
   __system_type=$(uname -s)
 
   function __log_debug () {
-    tput setaf 3 # 3 is yellow
+    tput setaf 3 # for yellow
     echo "$1"
     tput sgr0
   }
 
   function __log_info () {
     tput bold
-    tput setaf 2 # 2 is green
+    tput setaf 2 # for green
     echo "$1"
     tput sgr0
   }
 
   function __load_module () {
     __log_info "loading module: $1"
-    . "$(dirname $BASH_SOURCE)/bootstrap_modules/$1.sh" 2>&1 | awk '{print "         "$0}'
+    . "$(dirname $BASH_SOURCE)/bootstrap_modules/$1.sh" 2>&1 | awk '{print "\t"$0}'
   }
 
   # loading them automatically is possible and easy to implement as demonstrated below but
