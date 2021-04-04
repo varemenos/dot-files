@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [ "${1}" == "--load" ]; then
-  export __system_type
-  __system_type=$(uname -s)
+  export __SYSTEM_TYPE
+  __SYSTEM_TYPE=$(uname -s)
 
   function __log_debug () {
     tput setaf 3 # for yellow
@@ -46,7 +46,7 @@ elif [ "${1}" == "--unload" ]; then
   # but regardless, this can possibly be used in the future as a hook of some sort
   # a "lifecycle event"
   unset -f __log_debug __log_info __load_module __load_modules
-  unset -f __system_type __modules_path
+  unset -f __SYSTEM_TYPE __modules_path
 else
   tput bold
   tput setaf 9 # for red

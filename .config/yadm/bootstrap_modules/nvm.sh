@@ -9,17 +9,17 @@ if [ ! -e "$NVM_DIR/nvm.sh" ]; then
 
 	#https://github.com/creationix/nvm#manual-install
 	git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-	pushd "$NVM_DIR"
+	pushd "$NVM_DIR" || exit
 else
 	__log_debug "nvm is already installed, upgrading."
 
   # https://github.com/creationix/nvm#manual-upgrade
-	pushd "$NVM_DIR"
+	pushd "$NVM_DIR" || exit
 	git fetch origin
 	git checkout .
 fi
 
-git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+git checkout "$(git describe --abbrev=0 --tags --match "v[0-9]*" origin)"
 . "$NVM_DIR/nvm.sh"
 
 nvm install 'lts/*'
@@ -30,4 +30,4 @@ nvm alias default current
 
 nvm use default
 
-popd
+popd || return

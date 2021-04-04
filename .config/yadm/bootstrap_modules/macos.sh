@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $__system_type = "Darwin" ]; then
+if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   __log_debug "Setting up macos"
 
   # ~/.macos — https://mths.be/macos credits where it's due

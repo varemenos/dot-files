@@ -1,8 +1,8 @@
 #!/bin/bash
-if [ $__system_type = "Darwin" ]; then
+if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   __log_debug "Checking brew"
 
-  if test ! $(which brew); then
+  if test ! "$(which brew)"; then
     __log_debug "installing Homebrew"
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
