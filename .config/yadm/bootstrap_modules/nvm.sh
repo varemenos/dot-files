@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 __log_debug "Checking nvm"
 

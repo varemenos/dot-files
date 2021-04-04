@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$MODE" == "load" ]; then
+if [ "${1}" == "--load" ]; then
   export __system_type
   __system_type=$(uname -s)
 
@@ -35,7 +35,7 @@ if [ "$MODE" == "load" ]; then
   }
 
   __log_info 'loaded bootstrap utils'
-elif [ "$MODE" == "unload" ]; then
+elif [ "${1}" == "--unload" ]; then
     tput bold
     tput setaf 2 # for green
     echo "unloaded bootstrap utils"
@@ -45,10 +45,11 @@ elif [ "$MODE" == "unload" ]; then
   # it's not needed but extra hygine never hurt anyone (famous last words)
   # but regardless, this can possibly be used in the future as a hook of some sort
   # a "lifecycle event"
-  unset -f __log_debug __log_info __load_module __load_modules __system_type
+  unset -f __log_debug __log_info __load_module __load_modules
+  unset -f __system_type __modules_path
 else
   tput bold
   tput setaf 9 # for red
-  echo "MODE needs to be set to one of the following: load|unload"
+  echo "You need to either call this script with --load or --unload"
   tput sgr0
 fi

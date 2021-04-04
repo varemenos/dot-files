@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 chmod 700 ~/.cache ~/.config
 
-__script_path=$(dirname "$BASH_SOURCE")
+__script_path=$(dirname "${BASH_SOURCE[0]}")
 
-MODE=load . "$__script_path"/bootstrap_utils
+. "$__script_path"/bootstrap_utils --load
 
 __load_module decrypt_secrets
 __load_module nvm
@@ -15,4 +15,4 @@ __load_module macos
   # TODO:
   # check if dependencies are not installed and try to automaticall install them
 
-MODE=unload . "$__script_path"/bootstrap_utils
+. "$__script_path"/bootstrap_utils --unload

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ $__system_type = "Darwin" ]; then
   __log_debug "Setting up macos"
 
