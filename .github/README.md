@@ -12,7 +12,7 @@ yadm clone yadm clone --bootstrap git@github.com:varemenos/dot-files.git
 ## Bootstrap system
 
 The bootstrapping part of this repo is triggered via yadm but it's content is custom-built.
-The [bootstrap](/blob/master/.config/yadm/bootstrap) loads up a bunch of utility functions which then help load a set of thematically-separated scripts called modules (for the sake of not finding a better word for them). Each module then is in charge of running the scripts it's supposed to run and clean up after itself; they must even make sure they run only in the platforms that they are supposed to run (i.e. platform specific set-up).
+The [bootstrap](/.config/yadm/bootstrap) loads up a bunch of utility functions which then help load a set of thematically-separated scripts called modules (for the sake of not finding a better word for them). Each module then is in charge of running the scripts it's supposed to run and clean up after itself; they must even make sure they run only in the platforms that they are supposed to run (i.e. platform specific set-up).
 
 ## Structure
 
