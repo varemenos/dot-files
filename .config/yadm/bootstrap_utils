@@ -17,18 +17,16 @@ if [ "${1}" == "--load" ]; then
     tput sgr0
   }
 
-  __modules_path=$(dirname "${BASH_SOURCE[0]}")/bootstrap_modules/
-
   function __load_module () {
     __log_info "loading module: $1"
-    . "$__modules_path"/"$1".sh 2>&1 | awk '{print "\t"$0}'
+    . "$(dirname "${BASH_SOURCE[0]}")/bootstrap_modules/$1".sh 2>&1 | awk '{print "\t"$0}'
   }
 
   # loading them automatically is possible and easy to implement as demonstrated below but
   # it's better to explicitly call them; this way you can disable files, or have more
   # control over their order without prepending the filenames with numbers.
   function __load_modules () {
-    for f in "$__modules_path"/*; do
+    for f in "$(dirname "${BASH_SOURCE[0]}")/bootstrap_modules/"/*; do
       module_name=$(basename -s .sh "$f")
       __load_module "$module_name"
     done
