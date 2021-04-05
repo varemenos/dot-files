@@ -20,7 +20,8 @@ Each module has the obligation to the scripts it's supposed to run and clean up 
 
 ## Structure
 
-All files are located in the same location they'd be located in the target machine relative to the position of home `~`.
+The dot-files in this repo are located in the exact location you'd expect them to end up in your filesystem in relation to the path of home `~`.
+
 The only files that are not related are the ones inside .github, which is an alternative way to store GitHub-related files such as LICENSE, README, CONTRIBUTING, and ISSUE_TEMPLATE.
 
 ## Future goals
