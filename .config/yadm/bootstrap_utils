@@ -19,6 +19,9 @@ if [ "${1}" == "--load" ]; then
 
   function __load_module () {
     __log_info "loading module: $1"
+
+    # source $(root_dir")/bootstrap_modules/module_name.sh {grab stderr too} and
+    #  pipe it to awk in order to modify it's output (std{out|err}) and prepend it with a tab character
     . "$(dirname "${BASH_SOURCE[0]}")/bootstrap_modules/$1".sh 2>&1 | awk '{print "\t"$0}'
   }
 
