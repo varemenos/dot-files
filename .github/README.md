@@ -26,7 +26,6 @@ The only files that are not related are the ones inside .github, which is an alt
 ## Future goals
 
 * Make sure all modules are idempotent
-* Try to follow/enforce the XDG Base Directory spec if possible
 * Support more platforms
 * Make it possible for other people to use this without any issues
 * Install dependencies as part of the bootstrapping
