@@ -89,6 +89,8 @@
 [includeIf "gitdir:~/Projects/Vimla/"]
 	path = ~/Projects/Vimla/.gitconfig
 
+# Color set-up
+# based on diff-so-fancy's script https://github.com/so-fancy/diff-so-fancy#improved-colors-for-the-highlighted-bits
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -108,3 +110,10 @@
 	defaultBranch = master
 [pull]
 	ff = only
+
+# VSCode as difftool
+
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
