@@ -77,9 +77,9 @@ if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   # Disable auto-correct
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-  # Set a blazingly fast keyboard repeat rate
-  defaults write NSGlobalDomain KeyRepeat -int 1
-  defaults write NSGlobalDomain InitialKeyRepeat -int 10
+  # Set keyboard repeat rate
+  defaults write NSGlobalDomain KeyRepeat -int 5
+  defaults write NSGlobalDomain InitialKeyRepeat -int 20
 
   # Set language and text formats
   # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
@@ -98,17 +98,19 @@ if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
   defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
   defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write NSGlobalDomain com.apple.swipescrolldirection = 1
 
   #=========== Power
+
+  # Disable machine sleep while charging
+  sudo pmset -c sleep 60
 
   # Restart automatically if the computer freezes
   sudo systemsetup -setrestartfreeze on
 
   # Sleep the display after 15 minutes
+  sudo pmset -a sleep 60
   sudo pmset -a displaysleep 15
-
-  # Disable machine sleep while charging
-  sudo pmset -c sleep 60
 
   # Set machine sleep to 5 minutes on battery
   sudo pmset -b sleep 5
