@@ -62,3 +62,22 @@ function chpwd --on-variable PWD --description 'handler of changing $PWD'
     ls
   end
 end
+
+function __gde_showPreview
+  set preview "git diff @ --color=always -- {-1}"
+  set execute "enter:execute(git difftool {} < /dev/tty)"
+  git diff @ --name-only | fzf -m --ansi --bind $execute --preview $preview
+end
+
+function gde
+  if git rev-parse --git-dir > /dev/null 2>&1
+    if [ -d .git ]
+      __gde_showPreview > /dev/null
+    else
+      set gitRepoDir (git rev-parse --git-dir | sed 's/.git//')
+      pushd $gitRepoDir > /dev/null
+      __gde_showPreview > /dev/null
+      popd > /dev/null
+    end
+  end
+end
