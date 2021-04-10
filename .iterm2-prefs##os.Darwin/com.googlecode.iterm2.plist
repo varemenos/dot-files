@@ -345,7 +345,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 0 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 649 1680 378 0 0 1680 1027 </string>
+	<string>0 650 1680 378 0 0 1680 1025 </string>
 	<key>NeverWarnAboutShortLivedSessions_4EA994C4-CE67-4987-BA32-C8CF240B0571</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4EA994C4-CE67-4987-BA32-C8CF240B0571_selection</key>
@@ -1690,9 +1690,10 @@
 	<array>
 		<string>3.3.2</string>
 		<string>3.3.9</string>
+		<string>3.3.6</string>
 		<string>3.3.7</string>
 		<string>3.3.3</string>
-		<string>3.3.6</string>
+		<string>3.3.12</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -1707,12 +1708,16 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>1</integer>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{596, 645}</string>
+		<string>{473, 737}</string>
 	</dict>
 	<key>NoSyncInstallUtilitiesPackage</key>
 	<true/>
@@ -1721,7 +1726,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>FC1FD895-FE36-42C1-BE95-E09C8AAD3134</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>28</integer>
+	<integer>94</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2531,6 +2536,8 @@
 	<string>~/.iterm2-prefs</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<true/>
 	<key>PromptOnQuitEvenIfThereAreNoWindows</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2546,7 +2553,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-09T09:56:25Z</date>
+	<date>2021-04-05T16:32:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2595,7 +2602,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
