@@ -16,6 +16,9 @@ set fish_user_paths $fish_user_paths ~/.rbenv/shims
 # END SSH-AGENT
 
 # OVERRIDES
+
+bind \cS __fzf_search_git_status # use Control + S keybinding to open fzf for git status
+
 if command -q exa
   function ls -w exa
     exa -hg --icons --group-directories-first --color=auto $argv
@@ -33,7 +36,6 @@ function nvm
 end
 # END OVERRIDES
 
-
 # LIFECICLE HOOKS
 function autonvm --on-variable PWD
   if test -e .nvmrc
@@ -45,12 +47,6 @@ function autonvm --on-variable PWD
     export DEVELOPER_DIR=/Users/adonisk/Downloads/Xcode(cat .xcode-version).app/Contents/Developer
   end
 end
-
-# function autoprojectcontrol --on-variable PWD
-#   if test -e project-control.sh
-#     bash project-control.sh
-#   end
-# end
 
 # END HOOKS
 
@@ -72,12 +68,12 @@ end
 if command -q zoxide
   zoxide init fish | source
 else
-  echo "ZOXIDE IS NOT INSTALLED"
+  echo "you need to install zoxide"
 end
 
 # must be at the end of the file
 if command -q starship
   starship init fish | source
 else
-  echo "STARSHIP IS NOT INSTALLED"
+  echo "you need to install starship"
 end
