@@ -74,8 +74,7 @@ function gde
     if [ -d .git ]
       __gde_showPreview > /dev/null
     else
-      set gitRepoDir (git rev-parse --git-dir | sed 's/.git//')
-      pushd $gitRepoDir > /dev/null
+      pushd (git rev-parse --show-toplevel) > /dev/null
       __gde_showPreview > /dev/null
       popd > /dev/null
     end
