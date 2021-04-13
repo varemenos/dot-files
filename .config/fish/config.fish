@@ -18,6 +18,7 @@ set fish_user_paths $fish_user_paths ~/.rbenv/shims
 # OVERRIDES
 
 bind \cS __fzf_search_git_status # use Control + S keybinding to open fzf for git status
+bind \eB prevd-or-backward-word # fix cmd + <- so it doesn't print a `B` instead of moving backwards
 
 if command -q exa
   function ls -w exa
