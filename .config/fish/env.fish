@@ -8,3 +8,4 @@ set -gx LC_ALL "en_US.UTF-8"
 set -gx GPG_TTY (tty)
 
 set -gx fish_user_paths "/usr/local/sbin" $fish_user_paths
+set --universal nvm_default_version v14

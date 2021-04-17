@@ -23,8 +23,19 @@ if command -q bat
 end
 # END OVERRIDES
 
+function nvm
+  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+# END OVERRIDES
+
+# LIFECICLE HOOKS
+
 # EVENT HOOKS
 function autoload-hooks --on-variable PWD
+  if test -e .nvmrc
+    nvm use
+  end
+
   if test -e .xcode-version
     # xcversion select (cat .xcode-version)
     export DEVELOPER_DIR=/Users/adonisk/Downloads/Xcode(cat .xcode-version).app/Contents/Developer
@@ -32,7 +43,6 @@ function autoload-hooks --on-variable PWD
 end
 # END EVENT HOOKS
 
-load_nvm
 autoload-hooks
 
 if command -q rg
