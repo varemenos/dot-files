@@ -5,16 +5,6 @@ source ~/.config/fish/my_functions.fish
 
 set fish_user_paths $fish_user_paths ~/.rbenv/shims
 
-# SSH-AGENT
-# function start_ssh_agent
-#   ssh-add -l | grep "The agent has no identities" > /dev/null
-#   if [ $status -eq 0 ]
-#     ssh-add
-#   end
-# end
-# start_ssh_agent
-# END SSH-AGENT
-
 # OVERRIDES
 
 bind \cS __fzf_search_git_status # use Control + S keybinding to open fzf for git status
@@ -31,28 +21,19 @@ if command -q bat
     bat $argv
   end
 end
-
-function nvm
-  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end
 # END OVERRIDES
 
-# LIFECICLE HOOKS
-function autonvm --on-variable PWD
-  if test -e .nvmrc
-    nvm use
-  end
-
+# EVENT HOOKS
+function autoload-hooks --on-variable PWD
   if test -e .xcode-version
     # xcversion select (cat .xcode-version)
     export DEVELOPER_DIR=/Users/adonisk/Downloads/Xcode(cat .xcode-version).app/Contents/Developer
   end
 end
+# END EVENT HOOKS
 
-# END HOOKS
-
-# autoprojectcontrol
-autonvm
+load_nvm
+autoload-hooks
 
 if command -q rg
   set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow --no-messages --glob '!.git/*'"

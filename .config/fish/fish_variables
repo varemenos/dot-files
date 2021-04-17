@@ -1,0 +1,44 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR F_CMD:f
+SETUVAR F_DATA:/Users/adonisk/\x2elocal/share/f/data
+SETUVAR F_DATA_DIR:/Users/adonisk/\x2elocal/share/f
+SETUVAR F_EXCLUDE:\x5e/tmp/\x2e\x2b
+SETUVAR --export __ABBR_TIPS_KEYS:\x1d
+SETUVAR --export __ABBR_TIPS_VALUES:\x1d
+SETUVAR __fish_initialized:3100
+SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/adonisk/\x2econfig/fish/functions/__fzf_extract_var_info\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_preview_file\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_report_file_type\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_search_current_dir\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_search_git_log\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_search_git_status\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_search_history\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__fzf_search_shell_variables\x2efish\x1e/Users/adonisk/\x2econfig/fish/conf\x2ed/fzf\x2efish
+SETUVAR _fisher_danhper_2F_fish_2D_ssh_2D_agent_files:/Users/adonisk/\x2econfig/fish/functions/__ssh_agent_is_started\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__ssh_agent_start\x2efish\x1e/Users/adonisk/\x2econfig/fish/conf\x2ed/fish\x2dssh\x2dagent\x2efish
+SETUVAR _fisher_decors_2F_fish_2D_colored_2D_man_files:/Users/adonisk/\x2econfig/fish/functions/man\x2efish
+SETUVAR _fisher_edc_2F_bass_files:/Users/adonisk/\x2econfig/fish/functions/__bass\x2epy\x1e/Users/adonisk/\x2econfig/fish/functions/bass\x2efish
+SETUVAR _fisher_gokulsoumya_2F_f_files:/Users/adonisk/\x2econfig/fish/functions/__f\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__f_add\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__f_clean\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__f_complete\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__f_extract_paths\x2efish\x1e/Users/adonisk/\x2econfig/fish/functions/__f_insert_from_picker\x2efish\x1e/Users/adonisk/\x2econfig/fish/conf\x2ed/f\x2efish\x1e/Users/adonisk/\x2econfig/fish/conf\x2ed/f_key_bindings\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/adonisk/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/adonisk/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:PatrickF1/fzf\x2efish\x1eedc/bass\x1egokulsoumya/f\x1edecors/fish\x2dcolored\x2dman\x1edanhper/fish\x2dssh\x2dagent\x1ejorgebucaran/fisher
+SETUVAR fish_color_autosuggestion:747369
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:99cc99
+SETUVAR fish_color_comment:ffcc66
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:cc99cc
+SETUVAR fish_color_error:f2777a
+SETUVAR fish_color_escape:66cccc
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_match:6699cc
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:6699cc
+SETUVAR fish_color_param:d3d0c8
+SETUVAR fish_color_quote:ffcc66
+SETUVAR fish_color_redirection:d3d0c8
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/usr/local/sbin\x1e/usr/local/sbin\x1e/Users/adonisk/\x2erbenv/shims\x1e/Users/adonisk/\x2efzf/bin\x1e/Users/adonisk/\x2erbenv/shims\x1e/usr/local/opt/fzf/bin
