@@ -8,7 +8,7 @@ curl -fLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master
 chmod a+x /usr/local/bin/yadm
 
 # then use yadm to download, install and bootstrap the dot-files
-yadm clone yadm clone --bootstrap git@github.com:varemenos/dot-files.git
+yadm clone --bootstrap git@github.com:varemenos/dot-files.git
 ```
 
 ## Bootstrap system
