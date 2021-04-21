@@ -5,6 +5,7 @@ chmod 700 ~/.cache ~/.config
 . "$(dirname "${BASH_SOURCE[0]}")"/bootstrap_utils --load
 
 __load_module decrypt_secrets
+__load_module fisher
 __load_module nvm
 __load_module xcode
 __load_module brew

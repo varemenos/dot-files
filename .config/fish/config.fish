@@ -3,8 +3,6 @@ set -U fish_greeting
 source ~/.config/fish/env.fish
 source ~/.config/fish/my_functions.fish
 
-set fish_user_paths $fish_user_paths ~/.rbenv/shims
-
 # OVERRIDES
 
 bind \cS __fzf_search_git_status # use Control + S keybinding to open fzf for git status
@@ -24,7 +22,7 @@ end
 # END OVERRIDES
 
 function nvm
-  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+  bass source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 # END OVERRIDES
 
