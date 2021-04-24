@@ -50,7 +50,7 @@ function autoload-hooks --on-variable PWD
 end
 # END EVENT HOOKS
 
-nvm use default --silent
+# nvm use default --silent
 autoload-hooks
 
 if ! command -q fzf
