@@ -1,6 +1,7 @@
 set -U fish_greeting
 
 source ~/.config/fish/env.fish
+source ~/.config/fish/color_scheme.fish
 source ~/.config/fish/my_functions.fish
 
 # OVERRIDES
