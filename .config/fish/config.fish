@@ -31,7 +31,7 @@ end
 # END OVERRIDES
 
 function nvm
-  bass source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
+  replay source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 # END OVERRIDES
 
