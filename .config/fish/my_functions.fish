@@ -59,6 +59,10 @@ end
 
 function y -w yadm; yadm $argv; end
 
+function week
+  date +%V
+end
+
 function chpwd --on-variable PWD --description 'handler of changing $PWD'
   if not status --is-command-substitution ; and status --is-interactive
     set cur_cwd (echo $PWD | sed -e "s|^$HOME|~|" -e 's|^/private||')
