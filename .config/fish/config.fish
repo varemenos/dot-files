@@ -39,18 +39,19 @@ end
 
 # EVENT HOOKS
 function autoload-hooks --on-variable PWD
-  if test -e .nvmrc
+  status --is-command-substitution; and return
+
+  if test -f .nvmrc; and test -r .nvmrc;
     nvm use
   end
 
-  if test -e .xcode-version
+  if test -f .xcode-version; and test -r .xcode-version;
     # xcversion select (cat .xcode-version)
     export DEVELOPER_DIR=$HOME/Downloads/Xcode(cat .xcode-version).app/Contents/Developer
   end
 end
 # END EVENT HOOKS
 
-# nvm use default --silent
 autoload-hooks
 
 if ! command -q fzf
