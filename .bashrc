@@ -35,3 +35,7 @@ export PROMPT_COMMAND=enter_directory
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+
+alias g=git
+alias b=bash
+alias f=fish

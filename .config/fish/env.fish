@@ -15,3 +15,10 @@ fish_add_path $HOME/.rbenv/shims
 # fzf
 fish_add_path /usr/local/opt/fzf/bin
 fish_add_path $HOME/.fzf/bin
+
+# java 8
+# only works for mac os
+set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+# android
+set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
+set -gx ANDROID_HOME $HOME/Library/Android/sdk

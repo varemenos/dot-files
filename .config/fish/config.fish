@@ -21,6 +21,15 @@ else
   echo "you need to install exa - https://github.com/ogham/exa#installation"
 end
 
+function f -w fish
+  fish
+end
+
+function b -w bash
+  bash
+end
+
+
 if command -q bat
   function cat -w bat
     bat $argv
