@@ -1,4 +1,4 @@
-# dot-files (why the dash? idk)
+# dot-files
 
 ## Installation instructions
 
