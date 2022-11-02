@@ -91,3 +91,7 @@ if command -q starship
 else
   echo "you need to install starship - https://github.com/starship/starship#-installation"
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
