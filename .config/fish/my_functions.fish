@@ -10,57 +10,46 @@ function gsh -w 'git show'; git show $argv; end
 function gst -w 'git stash'; git stash $argv; end
 function gt -w 'git tag'; git tag $argv; end
 function gw -w 'git whatchanged'; git whatchanged $argv; end
-
 function gc -w 'git commit'; git commit $argv; end
 function gca -w 'git commit'; git commit --amend $argv; end
-
 function gcl -w 'git clone'; git clone $argv; end
 function gco -w 'git checkout'; git checkout $argv; end
-
 function gd -w 'git diff'; git diff $argv; end
 function gdc -w 'git diff'; git diff --cached $argv; end
-
 function gf -w 'git fetch'; git fetch $argv; end
 function gi -w 'git init'; git init $argv; end
-
 function gl -w 'git log'; git log $argv; end
 function glp -w 'git log'; git log --oneline $argv; end
 function glv -w 'git log'; git log --oneline --graph $argv; end
-
 function gm -w 'git merge'; git merge $argv; end
 function gma -w 'git merge'; git merge --abort $argv; end
 function gmc -w 'git merge'; git merge --continue $argv; end
 function gms -w 'git merge'; git merge --skip $argv; end
-
-
 function grb -w 'git rebase'; git rebase $argv; end
 function grba -w 'git rebase'; git rebase --abort $argv; end
 function grbc -w 'git rebase'; git rebase --continue $argv; end
 function grbs -w 'git rebase'; git rebase --skip $argv; end
-
-
 function gs -w 'git status'; git status $argv; end
 function gws -w 'git status'; git status -s $argv; end
 
 function grep -w 'grep'; command grep --color=auto $argv; end
-function weather; curl wttr.in/Stockholm; end
 
 function nr -w 'npm run'; npm run $argv; end
 function ni -w 'npm install'; npm install $argv; end
 function nre -w 'npm remove'; npm remove $argv; end
 
 function backup -d "Back up file for directory to source.bak"
-	cp -r $argv[1] $argv[1].bak
+    cp -r $argv[1] $argv[1].bak
 end
 
 function restore -d "Restore a backed up file for directory"
-	cp -r $argv[1].bak $argv[1]
+    cp -r $argv[1].bak $argv[1]
 end
 
 function y -w yadm; yadm $argv; end
 
 function week
-  date +%V
+    date +%V
 end
 
 function chpwd --on-variable PWD --description 'handler of changing $PWD'
@@ -88,3 +77,18 @@ function gde
     end
   end
 end
+
+
+function tldrf
+	tldr -l | fzf --preview "tldr {1} --color=always" | xargs tldr
+end
+
+
+# add support for ..
+function multicd; echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../); end
+abbr --add dotdot --regex '^\.\.+$' --function multicd
+
+# add support for !!
+abbr --add !! --position anywhere --function replace_history
+function replace_history; echo -- $history[1]; end
+

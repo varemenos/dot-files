@@ -6,11 +6,12 @@ source ~/.config/fish/my_functions.fish
 
 # OVERRIDES
 
-bind \cS __fzf_search_git_status # use Control + S keybinding to open fzf for git status
+fzf_configure_bindings --git_status=\cs # use Control + S keybinding to open fzf for git status
+
 bind \eB prevd-or-backward-word # fix cmd + <- so it doesn't print a `B` instead of moving backwards
 
 if command -q fisher
-  echo "you need to install bat - https://github.com/jorgebucaran/fisher#installation"
+  echo "you need to install fisher - https://github.com/jorgebucaran/fisher#installation"
 end
 
 if command -q exa
@@ -37,11 +38,10 @@ if command -q bat
 else
   echo "you need to install bat - https://github.com/sharkdp/bat#installation"
 end
-# END OVERRIDES
 
-function nvm
-  replay source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
-end
+# function nvm
+#   replay source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
+# end
 # END OVERRIDES
 
 # LIFECICLE HOOKS
@@ -77,12 +77,6 @@ if command -q delta
   set -gx DELTA_PAGER "less -rX"
 else
   echo "you need to install delta - https://github.com/dandavison/delta#installation"
-end
-
-if command -q zoxide
-  zoxide init fish | source
-else
-  echo "you need to install zoxide - https://github.com/ajeetdsouza/zoxide#getting-started"
 end
 
 # must be at the end of the file

@@ -12,13 +12,19 @@ fish_add_path /usr/local/sbin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.rbenv/shims
 
+fish_add_path $HOME/Library/Python/3.10/bin
+
 # fzf
 fish_add_path /usr/local/opt/fzf/bin
 fish_add_path $HOME/.fzf/bin
 
-# java 8
+# java 11
 # only works for mac os
-set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
 # android
 set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
+fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
+
+# openssh hack for vimla
+fish_add_path $HOME/bin

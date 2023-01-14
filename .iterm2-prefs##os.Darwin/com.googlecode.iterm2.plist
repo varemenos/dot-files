@@ -264,13 +264,13 @@
 	<key>Hotkey</key>
 	<false/>
 	<key>HotkeyChar</key>
-	<integer>46</integer>
+	<integer>0</integer>
 	<key>HotkeyCode</key>
-	<integer>47</integer>
+	<integer>0</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>HotkeyModifiers</key>
-	<integer>1048840</integer>
+	<integer>0</integer>
 	<key>HotkeyTermAnimationDuration</key>
 	<real>9.9999997473787516e-06</real>
 	<key>JobName</key>
