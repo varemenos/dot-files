@@ -7,7 +7,7 @@
 	<key>AboutToPasteTabsWithCancel_selection</key>
 	<integer>0</integer>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>CommandSelection</key>
 	<true/>
 	<key>CopySelection</key>

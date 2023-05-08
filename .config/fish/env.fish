@@ -20,11 +20,12 @@ fish_add_path $HOME/.fzf/bin
 
 # java 11
 # only works for mac os
-set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/
 # android
 set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
+fish_add_path $ANDROID_HOME/platform-tools
 
 # openssh hack for vimla
 fish_add_path $HOME/bin

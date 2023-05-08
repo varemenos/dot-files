@@ -55,8 +55,7 @@ function autoload-hooks --on-variable PWD
   end
 
   if test -f .xcode-version; and test -r .xcode-version;
-    # xcversion select (cat .xcode-version)
-    export DEVELOPER_DIR=$HOME/Downloads/Xcode(cat .xcode-version).app/Contents/Developer
+    xcodes select (cat .xcode-version)
   end
 end
 # END EVENT HOOKS
