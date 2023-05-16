@@ -87,8 +87,13 @@
 [fetch]
 	prune = true
 
-[includeIf "gitdir:~/Projects/Vimla/"]
-	path = ~/Projects/Vimla/.gitconfig
+# TODO: this needs to be starhive now
+# [includeIf "gitdir:~/Projects/Vimla/"]
+# 	path = ~/Projects/Vimla/.gitconfig
+# looks like this atm
+# [user]
+#     name= %my name%
+#     email = %my vimla email%
 
 # Color set-up
 # based on diff-so-fancy's script https://github.com/so-fancy/diff-so-fancy#improved-colors-for-the-highlighted-bits

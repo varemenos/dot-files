@@ -12,6 +12,7 @@ fish_add_path /usr/local/sbin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.rbenv/shims
 
+# TODO: do I still need this?
 fish_add_path $HOME/Library/Python/3.10/bin
 
 # fzf
@@ -26,6 +27,3 @@ set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
 fish_add_path $ANDROID_HOME/platform-tools
-
-# openssh hack for vimla
-fish_add_path $HOME/bin
