@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   __log_debug "Checking brew"
 

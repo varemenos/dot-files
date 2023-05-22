@@ -5,5 +5,6 @@ read -r answer
 
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
+  # brew install gpg
   yadm decrypt
 fi
