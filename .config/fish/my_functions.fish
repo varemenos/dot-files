@@ -3,6 +3,7 @@ function ga -w 'git add'; git add $argv; end
 function gb -w 'git branch'; git branch $argv; end
 function gmv -w 'git mv'; git mv $argv; end
 function gp -w 'git push'; git push $argv; end
+function gpf -w 'git push --force-with-lease'; git push --force-with-lease $argv; end
 function gpl -w 'git pull'; git pull $argv; end
 function gr -w 'git reset'; git reset $argv; end
 function grm -w 'git rm'; git rm $argv; end
@@ -37,6 +38,9 @@ function grep -w 'grep'; command grep --color=auto $argv; end
 function nr -w 'npm run'; npm run $argv; end
 function ni -w 'npm install'; npm install $argv; end
 function nre -w 'npm remove'; npm remove $argv; end
+
+function p -w 'pnpm'; pnpm $argv; end
+function pd -w 'pnpm dev'; pnpm dev $argv; end
 
 function backup -d "Back up file for directory to source.bak"
     cp -r $argv[1] $argv[1].bak
@@ -91,4 +95,3 @@ abbr --add dotdot --regex '^\.\.+$' --function multicd
 # add support for !!
 abbr --add !! --position anywhere --function replace_history
 function replace_history; echo -- $history[1]; end
-

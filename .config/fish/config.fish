@@ -6,7 +6,7 @@ source ~/.config/fish/my_functions.fish
 
 # OVERRIDES
 
-fzf_configure_bindings --git_status=\cs # use Control + S keybinding to open fzf for git status
+#fzf_configure_bindings --git_status=\cs # use Control + S keybinding to open fzf for git status
 
 bind \eB prevd-or-backward-word # fix cmd + <- so it doesn't print a `B` instead of moving backwards
 

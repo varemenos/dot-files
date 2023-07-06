@@ -55,6 +55,7 @@
 	ms = merge --skip
 	mv = mv
 	p = push
+	pf = push --force-with-lease
 	pl = pull
 	r = reset
 	rb = rebase
@@ -87,13 +88,9 @@
 [fetch]
 	prune = true
 
-# TODO: this needs to be starhive now
-# [includeIf "gitdir:~/Projects/Vimla/"]
-# 	path = ~/Projects/Vimla/.gitconfig
-# looks like this atm
-# [user]
-#     name= %my name%
-#     email = %my vimla email%
+# starhive setup
+[includeIf "gitdir:~/Projects/starhive/"]
+	path = ~/Projects/starhive/.gitconfig
 
 # Color set-up
 # based on diff-so-fancy's script https://github.com/so-fancy/diff-so-fancy#improved-colors-for-the-highlighted-bits

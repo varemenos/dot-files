@@ -8,7 +8,6 @@ set -gx LC_ALL "en_US.UTF-8"
 set -gx GPG_TTY (tty)
 
 fish_add_path /opt/homebrew/bin
-fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.rbenv/shims
 
 # fzf

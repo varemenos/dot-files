@@ -243,6 +243,8 @@
 	<true/>
 	<key>EnableProxyIcon</key>
 	<false/>
+	<key>EnableRendezvous</key>
+	<false/>
 	<key>GlobalTouchBarMap</key>
 	<dict/>
 	<key>HapticFeedbackForEsc</key>
@@ -1006,7 +1008,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCodeNerdFontComplete-Light 11</string>
+			<string>FiraCodeNFM-Reg 11</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -1706,9 +1708,11 @@
 		</dict>
 	</array>
 	<key>OpenArrangementAtStartup</key>
-	<true/>
-	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>OpenBookmark</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
