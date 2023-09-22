@@ -95,3 +95,6 @@ abbr --add dotdot --regex '^\.\.+$' --function multicd
 # add support for !!
 abbr --add !! --position anywhere --function replace_history
 function replace_history; echo -- $history[1]; end
+
+function rmnm; find . -name "node_modules" -type d -prune -exec rm -rf '{}' +; end
+function lsnm; find . -name "node_modules" -type d -prune; end
