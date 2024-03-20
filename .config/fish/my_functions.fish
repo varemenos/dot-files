@@ -98,3 +98,5 @@ function replace_history; echo -- $history[1]; end
 
 function rmnm; find . -name "node_modules" -type d -prune -exec rm -rf '{}' +; end
 function lsnm; find . -name "node_modules" -type d -prune; end
+
+function sync; git fetch && git rebase origin/main; end
