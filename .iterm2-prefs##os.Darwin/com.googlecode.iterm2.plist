@@ -8,7 +8,11 @@
 	<integer>0</integer>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>BracketedPasteMode</key>
+	<true/>
 	<key>CommandSelection</key>
+	<true/>
+	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>CopySelection</key>
 	<false/>
@@ -244,6 +248,8 @@
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>EnableRendezvous</key>
+	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
 	<false/>
 	<key>GlobalTouchBarMap</key>
 	<dict/>
@@ -1714,6 +1720,12 @@
 	<key>OpenNoWindowsAtStartup</key>
 	<true/>
 	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>
