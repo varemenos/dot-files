@@ -41,6 +41,7 @@ function nre -w 'npm remove'; npm remove $argv; end
 
 function p -w 'pnpm'; pnpm $argv; end
 function pd -w 'pnpm dev'; pnpm dev $argv; end
+function pt -w 'pnpm turbo run'; end
 
 function backup -d "Back up file for directory to source.bak"
     cp -r $argv[1] $argv[1].bak
