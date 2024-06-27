@@ -7,13 +7,14 @@
 
 [core]
 	editor = nano
-	fileMode = false # ignore file rights changes
+	fileMode = false # ignore file right changes
 	autocrlf = false # disable autocrlf mode
-	excludesfile = /Users/adonisk/.gitignore_global
+	excludesfile = /Users/kakoulidis/.gitignore_global
 	pager = delta
 
 [diff]
   compactionHeuristic
+  colorMoved = default
 
 [delta]
   features = side-by-side line-numbers decorations hyperlinks # need to `export DELTA_PAGER="less -rX"` otherwise everything will look funky
@@ -21,7 +22,10 @@
   plus-style = 'syntax bold auto'
   minus-style = 'syntax bold auto'
   hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+  navigate = true
 
+[interactive]
+  diffFilter = delta --color-only --features=interactive
 
 [log]
 	date=short
@@ -31,6 +35,29 @@
 	# the default is to push all branches
 	default = tracking
 	autoSetupRemote = true
+
+[help]
+	autocorrect = 1
+
+[fetch]
+	prune = true
+
+# starhive setup
+[includeIf "gitdir:~/Projects/starhive/"]
+	path = ~/Projects/starhive/.gitconfig
+
+[init]
+	defaultBranch = main
+
+[pull]
+	ff = only
+
+[merge]
+  conflictstyle = diff3
+
+[commit]
+	template = /Users/kakoulidis/.stCommitMsg
+
 
 [alias]
 	a = add
@@ -77,62 +104,3 @@
   cpa = cherry-pick --abort
   cpc = cherry-pick --continue
   cps = cherry-pick --skip
-
-	# show commit log of unique commits of this branch (not on master)
-	diffcommitsfrommaster = log --no-merges master..
-	# show unified diff of unique commits of this branch
-	difffrommaster = diff master...
-	# ^^^^ Holy crap two dots vs three dots, so important. https://stackoverflow.com/a/48681527
-
-[help]
-	autocorrect = 1
-
-[fetch]
-	prune = true
-
-# starhive setup
-[includeIf "gitdir:~/Projects/starhive/"]
-	path = ~/Projects/starhive/.gitconfig
-
-# Color set-up
-# based on diff-so-fancy's script https://github.com/so-fancy/diff-so-fancy#improved-colors-for-the-highlighted-bits
-[color]
-	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[init]
-	defaultBranch = master
-[pull]
-	ff = only
-
-# VSCode as difftool
-
-[diff]
-    tool = vscode
-    colorMoved = default
-[difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-[difftool]
-    prompt = false
-[merge]
-    tool = code
-[mergetool "code"]
-    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
