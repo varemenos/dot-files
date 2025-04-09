@@ -47,3 +47,4 @@ alias g=git
 alias b=bash
 alias s="source ./project-control.sh"
 alias f=fish
+

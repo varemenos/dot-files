@@ -47,20 +47,20 @@ end
 # LIFECICLE HOOKS
 
 # EVENT HOOKS
-function autoload-hooks --on-variable PWD
-  status --is-command-substitution; and return
+# function autoload-hooks --on-variable PWD
+#   status --is-command-substitution; and return
 
-  if test -f .nvmrc; and test -r .nvmrc;
-    nvm use
-  end
+#   if test -f .nvmrc; and test -r .nvmrc;
+#     nvm use
+#   end
 
-  if test -f .xcode-version; and test -r .xcode-version;
-    xcodes select (cat .xcode-version)
-  end
-end
+#   if test -f .xcode-version; and test -r .xcode-version;
+#     xcodes select (cat .xcode-version)
+#   end
+# end
 # END EVENT HOOKS
 
-autoload-hooks
+# autoload-hooks
 
 if ! command -q fzf
   echo "you need to install fzf - https://github.com/junegunn/fzf#installation"

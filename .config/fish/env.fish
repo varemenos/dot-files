@@ -22,3 +22,6 @@ set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
 fish_add_path $ANDROID_HOME/platform-tools
+
+# starhive infra
+set -gx BOUNDARY_ADDR https://boundary.infra.starhive.io
