@@ -39,31 +39,13 @@ else
   echo "you need to install bat - https://github.com/sharkdp/bat#installation"
 end
 
-# function nvm
-#   replay source $HOME/.nvm/nvm.sh --no-use ';' nvm $argv
-# end
-# END OVERRIDES
-
-# LIFECICLE HOOKS
-
-# EVENT HOOKS
-# function autoload-hooks --on-variable PWD
-#   status --is-command-substitution; and return
-
-#   if test -f .nvmrc; and test -r .nvmrc;
-#     nvm use
-#   end
-
-#   if test -f .xcode-version; and test -r .xcode-version;
-#     xcodes select (cat .xcode-version)
-#   end
-# end
-# END EVENT HOOKS
-
-# autoload-hooks
-
 if ! command -q fzf
   echo "you need to install fzf - https://github.com/junegunn/fzf#installation"
+end
+
+if ! command -q fnm
+  mkdir -p $HOME/.fnm # this will make it so the installation script for fnm installs it to this directory
+  echo "you need to install fnm - https://github.com/Schniz/fnm?tab=readme-ov-file#installation"
 end
 
 if command -q rg
