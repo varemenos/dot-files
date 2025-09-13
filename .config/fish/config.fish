@@ -60,18 +60,12 @@ else
   echo "you need to install delta - https://github.com/dandavison/delta#installation"
 end
 
-# must be at the end of the file
-if command -q starship
-  starship init fish | source
-else
-  echo "you need to install starship - https://github.com/starship/starship#-installation"
-end
-
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+# bun end
 
 # pnpm
 set -gx PNPM_HOME "/Users/adonisk/Library/pnpm"
@@ -79,3 +73,19 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# ssh-agent from keychain
+ssh-add --apple-use-keychain
+clear
+# ssh-agent end
+
+# starship
+# !!!!!
+# must be at the end of the file
+# !!!!!
+if command -q starship
+  starship init fish | source
+else
+  echo "you need to install starship - https://github.com/starship/starship#-installation"
+end
+# starship end
