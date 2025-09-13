@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
-  __log_debug "Setting up macos"
+  __log_debug "Setting up macOS"
 
   # ~/.macos — https://mths.be/macos credits where it's due
 
@@ -154,4 +154,7 @@ if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
     General -bool true \
     OpenWith -bool true \
     Privileges -bool true
+
+  __log_debug "Done setting up macOS"
+  __log_debug "You might need to Ctrl+C if the script seems stuck"
 fi

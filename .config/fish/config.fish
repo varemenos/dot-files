@@ -14,12 +14,12 @@ if command -q fisher
   echo "you need to install fisher - https://github.com/jorgebucaran/fisher#installation"
 end
 
-if command -q exa
-  function ls -w exa
-    exa -hg --icons --group-directories-first --color=auto $argv
+if command -q eza
+  function ls -w eza
+    eza -hg --icons --group-directories-first --color=auto $argv
   end
 else
-  echo "you need to install exa - https://github.com/ogham/exa#installation"
+  echo "you need to install eza - https://github.com/eza-community/eza?tab=readme-ov-file#installation"
 end
 
 function f -w fish
