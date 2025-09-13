@@ -9,10 +9,10 @@ __load_module xcode
 __load_module brew
 __load_module dependencies
 __load_module macos
-__load_module nvm
-__load_module firacode
+__load_module fnm
+__load_module iterm2
 
   # TODO:
-  # check if dependencies are not installed and try to automaticall install them
+  # check if dependencies are not installed and try to automatically install them
 
 . "$(dirname "${BASH_SOURCE[0]}")"/bootstrap_utils --unload

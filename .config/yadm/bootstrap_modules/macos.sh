@@ -42,7 +42,7 @@ if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   defaults write com.apple.LaunchServices LSQuarantine -bool false
 
   # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+  /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -r -domain local -domain system -domain user
 
   # Set Help Viewer windows to non-floating mode
   defaults write com.apple.helpviewer DevMode -bool true
