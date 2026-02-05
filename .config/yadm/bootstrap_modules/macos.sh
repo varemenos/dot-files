@@ -145,6 +145,53 @@ if [ "$__SYSTEM_TYPE" = "Darwin" ]; then
   # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+  # Don't show recent applications in Dock
+  defaults write com.apple.dock "show-recents" -bool false
+
+  # Enable auto-hide
+  defaults write com.apple.dock "autohide" -bool true
+
+  # Hide Spotlight from Control Center
+  defaults write com.apple.Spotlight MenuItemHidden -bool true
+
+  # Do not rearrange Spaces based on most recent use
+  defaults write com.apple.dock "mru-spaces" -bool false
+
+  # Do not group windows by application in Mission Control
+  defaults write com.apple.dock "expose-group-apps" -bool false
+
+  # Reset all Hot Corners to No Action (0)
+  defaults write com.apple.dock "wvous-tl-corner" -int 0
+  defaults write com.apple.dock "wvous-tr-corner" -int 0
+  defaults write com.apple.dock "wvous-bl-corner" -int 0
+  defaults write com.apple.dock "wvous-br-corner" -int 0
+
+  # Set Control Center visibility (2=MenuBar, 8=ControlCenter, 16=Default, 18=Both, 0=Hidden)
+
+  # Bluetooth: Show in Menu Bar
+  defaults write com.apple.controlcenter "Bluetooth" -int 2
+
+  # Display & Sound: Show in Control Center
+  defaults write com.apple.controlcenter "Display" -int 16
+  defaults write com.apple.controlcenter "Sound" -int 16
+
+  # Focus Modes: Show in Control Center
+  defaults write com.apple.controlcenter "FocusModes" -int 16
+
+  # Now Playing: Hidden
+  defaults write com.apple.controlcenter "NowPlaying" -int 0
+
+  # Screen Mirroring: Show in Both Menu Bar and Control Center
+  defaults write com.apple.controlcenter "ScreenMirroring" -int 18
+
+  # Siri & Spotlight: Show in Control Center
+  defaults write com.apple.controlcenter "Siri" -int 8
+  defaults write com.apple.controlcenter "Spotlight" -int 8
+
+  # Weather: Show in Menu Bar
+  defaults write com.apple.controlcenter "Weather" -int 2
+
+
   # Show the /Volumes folder
   sudo chflags nohidden /Volumes
 
