@@ -13,8 +13,9 @@
 	pager = delta
 
 [diff]
-  compactionHeuristic
+  compactionHeuristic = true
   colorMoved = default
+  algorithm = histogram
 
 [delta]
   features = side-by-side line-numbers decorations hyperlinks # need to `export DELTA_PAGER="less -rX"` otherwise everything will look funky
