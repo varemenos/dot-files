@@ -74,6 +74,11 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
+# Antigravity IDE
+fish_add_path /Users/adonisk/.antigravity-ide/antigravity-ide/bin
+# Antigravity CLI
+set -gx PATH "/Users/adonisk/.local/bin" $PATH
+
 # ssh-agent from keychain
 ssh-add --apple-use-keychain
 clear

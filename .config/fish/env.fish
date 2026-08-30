@@ -14,14 +14,10 @@ fish_add_path $HOME/.rbenv/shims
 fish_add_path /opt/homebrew/opt/fzf/bin
 fish_add_path $HOME/.fzf/bin
 
-# java 11
-# only works for mac os
-set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/
-# android
-set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
-set -gx ANDROID_HOME $HOME/Library/Android/sdk
+# android dev
+set -gx ANDROID_HOME /opt/homebrew/share/android-commandlinetools
+set -gx ANDROID_SDK_ROOT /opt/homebrew/share/android-commandlinetools
 fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
 fish_add_path $ANDROID_HOME/platform-tools
 
-# starhive infra
-set -gx BOUNDARY_ADDR https://boundary.infra.starhive.io
+

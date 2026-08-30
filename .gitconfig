@@ -99,9 +99,12 @@
 	t = tag
 	w = whatchanged
 	ws = status -s
-  cherrypick = cherry-pick
+	cherrypick = cherry-pick
 	cherry = cherry-pick
 	cp = cherry-pick
-  cpa = cherry-pick --abort
-  cpc = cherry-pick --continue
-  cps = cherry-pick --skip
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cps = cherry-pick --skip
+	# `git drop 21dba30` drops commit 21dba30
+	drop = "!f() { if [ -z \"$1\" ]; then echo \"Usage: git drop <commit-id>\"; exit 1; fi; git rebase --onto \"$1^\" \"$1\"; }; f"
+	

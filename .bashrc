@@ -48,3 +48,7 @@ alias b=bash
 alias s="source ./project-control.sh"
 alias f=fish
 
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/adonisk/.local/bin:$PATH"
