@@ -18,23 +18,10 @@ HISTFILESIZE=200000
 
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
-NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-export NVM_DIR
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines --shell bash)"
+fi
 
-# shellcheck source=/dev/null
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-enter_directory() {
-  if [[ $PWD == "$PREV_PWD" ]]; then
-    return
-  fi
-
-  PREV_PWD=$PWD
-
-  # no longer need to deal with xcode
-  # [[ -f ".xcode-version" ]] && xcversion select $(cat .xcode-version)
-  [[ -f ".nvmrc" ]] && nvm use
-}
 export PROMPT_COMMAND=enter_directory
 
 # shellcheck source=/dev/null
@@ -45,9 +32,7 @@ eval "$(starship init bash)"
 
 alias g=git
 alias b=bash
-alias s="source ./project-control.sh"
 alias f=fish
-
 
 
 # Added by Antigravity CLI installer
