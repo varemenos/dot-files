@@ -22,8 +22,6 @@ if command -v fnm >/dev/null 2>&1; then
   eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines --shell bash)"
 fi
 
-export PROMPT_COMMAND=enter_directory
-
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # TODO: find alternative of zoxide for bash, I'm using a fish plugin for this
