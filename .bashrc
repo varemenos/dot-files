@@ -1,5 +1,5 @@
 GPG_TTY=$(tty)
-export GPG_TTY
+[ -t 0 ] && export GPG_TTY=$(tty)
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 #########################################################################
@@ -16,6 +16,10 @@ HISTSIZE=1000
 HISTFILESIZE=200000
 #########################################################################
 
+if [ -x "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 if command -v fnm >/dev/null 2>&1; then
@@ -24,8 +28,7 @@ fi
 
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# TODO: find alternative of zoxide for bash, I'm using a fish plugin for this
-# eval "$(zoxide init bash)"
+
 eval "$(starship init bash)"
 
 alias g=git
