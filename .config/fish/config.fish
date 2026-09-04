@@ -10,7 +10,7 @@ source ~/.config/fish/my_functions.fish
 
 bind \eB prevd-or-backward-word # fix cmd + <- so it doesn't print a `B` instead of moving backwards
 
-if command -q fisher
+if not type -q fisher
   echo "you need to install fisher - https://github.com/jorgebucaran/fisher#installation"
 end
 
@@ -61,23 +61,20 @@ else
 end
 
 # bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+set -gx BUN_INSTALL "$HOME/.bun"
+fish_add_path $BUN_INSTALL/bin
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 # bun end
 
 # pnpm
-set -gx PNPM_HOME "/Users/adonisk/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+fish_add_path $PNPM_HOME
 # pnpm end
 
-# Antigravity IDE
+# Antigravity IDE & CLI
 fish_add_path /Users/adonisk/.antigravity-ide/antigravity-ide/bin
-# Antigravity CLI
-set -gx PATH "/Users/adonisk/.local/bin" $PATH
+fish_add_path $HOME/.local/bin
 
 # ssh-agent from keychain
 ssh-add --apple-use-keychain
