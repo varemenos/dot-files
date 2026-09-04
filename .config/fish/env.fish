@@ -5,7 +5,7 @@ set -gx LANGUAGE "en_US.UTF-8"
 set -gx LC_CTYPE "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 
-set -gx GPG_TTY (tty)
+test -t 0; and set -gx GPG_TTY (tty)
 
 fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/.rbenv/shims

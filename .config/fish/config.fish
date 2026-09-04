@@ -76,10 +76,10 @@ fish_add_path $PNPM_HOME
 fish_add_path /Users/adonisk/.antigravity-ide/antigravity-ide/bin
 fish_add_path $HOME/.local/bin
 
-# ssh-agent from keychain
-ssh-add --apple-use-keychain
-clear
-# ssh-agent end
+# ssh-agent from keychain (loads once, instant on every subsequent tab)
+if not ssh-add -l >/dev/null 2>&1
+  ssh-add --apple-use-keychain 2>/dev/null
+end
 
 # starship
 # !!!!!
