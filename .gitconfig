@@ -7,7 +7,6 @@
 
 [core]
 	editor = nano
-	fileMode = false # ignore file right changes
 	autocrlf = false # disable autocrlf mode
 	excludesfile = /Users/kakoulidis/.gitignore_global
 	pager = delta

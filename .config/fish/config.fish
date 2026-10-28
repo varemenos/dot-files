@@ -81,6 +81,16 @@ if not ssh-add -l >/dev/null 2>&1
   ssh-add --apple-use-keychain 2>/dev/null
 end
 
+# fnm
+# Keep fnm after every fish_add_path call so its selected Node takes precedence.
+# Use temporary state because sandboxed shells cannot write to ~/.local/state.
+if command -q fnm
+  set -l fnm_state "$TMPDIR/fnm-state"
+  mkdir -p "$fnm_state"
+  env XDG_STATE_HOME="$fnm_state" fnm env --log-level error --use-on-cd --version-file-strategy=recursive --resolve-engines --shell fish | source
+end
+# fnm end
+
 # starship
 # !!!!!
 # must be at the end of the file

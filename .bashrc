@@ -23,7 +23,7 @@ fi
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 if command -v fnm >/dev/null 2>&1; then
-  eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines --shell bash)"
+  eval "$(fnm env --log-level error --use-on-cd --version-file-strategy=recursive --resolve-engines --shell bash)"
 fi
 
 # shellcheck source=/dev/null
@@ -38,3 +38,8 @@ alias f=fish
 
 # Added by Antigravity CLI installer
 export PATH="/Users/adonisk/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in *":$PNPM_HOME:"*) ;; *) export PATH="$PNPM_HOME:$PATH" ;; esac
+# pnpm end
